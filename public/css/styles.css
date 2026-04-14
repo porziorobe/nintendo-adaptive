@@ -218,8 +218,8 @@ a:hover {
 .hero-follow__text {
   margin: 0;
   font-family: var(--font);
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 24px;
+  font-weight: 600;
   line-height: 1.45;
   color: var(--ink);
 }
@@ -267,7 +267,7 @@ a:hover {
 
 /* —— Product row —— */
 .product-row {
-  background: #f2f2f2;
+  background: #fff;
   padding: 1.25rem 1rem 2.5rem;
 }
 
@@ -276,8 +276,8 @@ a:hover {
   margin: 0 auto 1rem;
   padding: 0 1rem;
   font-family: var(--font);
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 24px;
+  font-weight: 600;
   line-height: 1.45;
   color: var(--ink);
 }
