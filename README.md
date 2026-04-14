@@ -36,7 +36,7 @@ The app binds to `process.env.PORT` in `server.js`, which Heroku provides automa
 
 - `public/index.html` — Markup for header, hero, and product row.
 - `public/css/styles.css` — Layout and Nintendo-style colors (`#e60012`, card grid).
-- `public/images/` — Hero and tile assets (replace files to match your exports; update `src` in `index.html` if you change extensions).
+- `public/images/` — Logo, hero, and tile assets (replace files as needed; update `src` and optional dimensions in HTML/CSS).
 - `server.js` — Express static file server.
 - `Procfile` — Heroku web process.
 
@@ -44,10 +44,8 @@ The app binds to `process.env.PORT` in `server.js`, which Heroku provides automa
 
 | File | Role |
 |------|------|
-| `nav-reference.png` | Full navigation bar raster (matches current nintendo.com layout). Replace the file to refresh the header; update `width`/`height` on the `<img>` and `--nav-raster-width` in `styles.css` if the pixel width changes. |
-
-**Nav sharpness:** The bundled PNG is **1024px wide**. Stretching it full-bleed on a large monitor upscales it and looks soft. CSS caps display width at `--nav-raster-width` (1:1 pixels on wide viewports). For a **retina-sharp** bar, supply a **2×** asset (e.g. 2048px wide with the same aspect ratio), set `--nav-raster-width: 2048px`, and update the `<img>` dimensions accordingly—or use a vector/SVG export if you have one.
-| `hero-keyart.png` | Wide hero banner (2880×900). Replace to swap the main hero image; keep width/height attributes in `index.html` in sync. |
+| `nintendo-logo.png` | Official-style logo in the **red brand lockup** (flush left). Swap the file to change artwork; tune `.site-header__logo` `height` / `max-width` in CSS if needed. |
+| `hero-keyart.png` | Wide hero banner (2880×900). Replace to swap the main hero image; keep `width`/`height` on the `<img>` in sync. |
 | `tile-mario-kart-world.svg` | Card 1 art (placeholder gradient until you replace). |
 | `tile-donkey-kong.svg` | Card 2 |
 | `tile-splatoon.svg` | Card 3 |

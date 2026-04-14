@@ -13,19 +13,32 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <!-- Nav matches current nintendo.com via raster (replace public/images/nav-reference.png to update) -->
     <header class="site-header" role="banner">
-      <a class="site-header__bar" href="#" aria-label="Home (demo)">
+      <a class="site-header__brand" href="#" aria-label="Nintendo home (demo)">
         <img
-          class="site-header__img"
-          src="images/nav-reference.png"
+          class="site-header__logo"
+          src="images/nintendo-logo.png"
           alt=""
           width="1024"
-          height="41"
+          height="341"
           decoding="async"
           fetchpriority="high"
         />
       </a>
+      <div class="site-header__main">
+        <nav class="site-header__nav" aria-label="Primary">
+          <a href="#">Explore</a>
+          <a href="#">Shop</a>
+          <a href="#">Support</a>
+        </nav>
+        <div class="site-header__tools">
+          <a href="#">Search</a>
+          <a href="#">Wish list</a>
+          <a href="#">Cart</a>
+          <a class="site-header__login" href="#">Log In / Sign up</a>
+          <span class="site-header__locale">English (US)</span>
+        </div>
+      </div>
     </header>
 
     <main id="main">

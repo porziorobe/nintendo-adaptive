@@ -8,8 +8,6 @@
   --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.08);
   --radius-card: 4px;
   --max-content: 1440px;
-  /* Match intrinsic width of nav-reference.png so it is not upscaled (blurry) on wide screens */
-  --nav-raster-width: 1024px;
   --font: "Open Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
@@ -47,31 +45,143 @@ a:hover {
   text-decoration: underline;
 }
 
-/* —— Header (raster matches current nintendo.com bar; swap nav-reference.png) —— */
+/* —— Header (nintendo.com–style: red brand flush left + text nav) —— */
 .site-header {
   position: relative;
   z-index: 20;
+  display: flex;
+  align-items: stretch;
+  min-height: 56px;
   background: #fff;
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e5e5e5;
 }
 
-.site-header__bar {
-  display: block;
-  line-height: 0;
+.site-header__brand {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  background: var(--nintendo-red);
+  padding: 0.35rem 1.15rem 0.35rem 1rem;
   text-decoration: none;
+  box-shadow: 1px 0 0 rgba(0, 0, 0, 0.06);
 }
 
-.site-header__bar:hover {
+.site-header__brand:hover {
   text-decoration: none;
-  opacity: 0.97;
+  filter: brightness(1.03);
 }
 
-.site-header__img {
+.site-header__logo {
   display: block;
-  width: min(100%, var(--nav-raster-width));
+  height: 34px;
+  width: auto;
+  max-width: 148px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.site-header__main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  min-width: 0;
+  max-width: var(--max-content);
   margin-inline: auto;
-  height: auto;
-  vertical-align: top;
+  padding-right: 1rem;
+  width: 100%;
+}
+
+.site-header__nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 2.25rem;
+  padding: 0.25rem 0.5rem;
+  min-width: 0;
+}
+
+.site-header__nav a {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--nintendo-red);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-header__nav a:hover {
+  text-decoration: underline;
+}
+
+.site-header__tools {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.35rem 1.1rem;
+}
+
+.site-header__tools > a:not(.site-header__login) {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--nintendo-red);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-header__tools > a:not(.site-header__login):hover {
+  text-decoration: underline;
+}
+
+.site-header__login {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--nintendo-red);
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.site-header__login:hover {
+  text-decoration: none;
+  background: #c4000f;
+}
+
+.site-header__locale {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    flex-wrap: wrap;
+  }
+
+  .site-header__main {
+    flex-wrap: wrap;
+    padding: 0 0.5rem 0.5rem;
+  }
+
+  .site-header__nav {
+    flex-basis: 100%;
+    justify-content: flex-start;
+    order: 2;
+  }
+
+  .site-header__tools {
+    flex-basis: 100%;
+    justify-content: flex-start;
+    order: 1;
+  }
 }
 
 /* —— Hero —— */
