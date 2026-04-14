@@ -2,13 +2,9 @@
 
 :root {
   --nintendo-red: #e60012;
-  --nintendo-red-dark: #c4000f;
   --ink: #3c3c3c;
   --muted: #737373;
   --surface: #ffffff;
-  --banner-yellow: #ffdd00;
-  --banner-yellow-edge: #f5c400;
-  --focus: #0066cc;
   --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.08);
   --radius-card: 4px;
   --max-content: 1440px;
@@ -47,24 +43,6 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
-
-.skip-link {
-  position: absolute;
-  left: -9999px;
-  top: 0;
-  z-index: 1000;
-  padding: 0.75rem 1rem;
-  background: var(--surface);
-  color: var(--ink);
-  font-weight: 600;
-}
-
-.skip-link:focus {
-  left: 0.5rem;
-  top: 0.5rem;
-  outline: 2px solid var(--focus);
-  outline-offset: 2px;
 }
 
 /* —— Header —— */
@@ -182,63 +160,15 @@ a:hover {
 .hero__media {
   position: relative;
   overflow: hidden;
-  max-height: min(72vh, 640px);
+  line-height: 0;
+  background: #000;
 }
 
 .hero__image {
   display: block;
   width: 100%;
-  height: min(72vh, 640px);
-  object-fit: cover;
-  /* Full-page screenshot: shift crop below embedded site header */
-  object-position: 50% 24%;
-}
-
-.hero__overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  pointer-events: none;
-}
-
-.hero__yellow {
-  pointer-events: auto;
-  margin: 0 0 1.5rem 1.5rem;
-  max-width: min(92vw, 420px);
-  padding: 1rem 1.25rem 1.25rem;
-  background: linear-gradient(180deg, var(--banner-yellow) 0%, var(--banner-yellow-edge) 100%);
-  border-radius: 2px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  color: #1a1a1a;
-}
-
-.hero__eyebrow {
-  margin: 0 0 0.25rem;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.hero__title {
-  margin: 0 0 0.5rem;
-  font-size: clamp(1.75rem, 4vw, 2.25rem);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
-
-.hero__sub {
-  margin: 0 0 1rem;
-  font-size: 0.9375rem;
-  line-height: 1.5;
-}
-
-.hero__sub em {
-  font-style: normal;
-  font-weight: 700;
+  height: auto;
+  vertical-align: top;
 }
 
 /* —— Buttons —— */
@@ -259,17 +189,6 @@ a:hover {
 
 .btn:hover {
   text-decoration: none;
-}
-
-.btn--primary {
-  background: var(--nintendo-red);
-  color: #fff;
-  border-color: var(--nintendo-red);
-}
-
-.btn--primary:hover {
-  background: var(--nintendo-red-dark);
-  border-color: var(--nintendo-red-dark);
 }
 
 .btn--outline {
@@ -393,16 +312,6 @@ a:hover {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .hero__yellow {
-    margin: 0 1rem 1rem;
-    max-width: none;
-  }
-
-  .hero__image,
-  .hero__media {
-    max-height: 480px;
-    height: 480px;
-  }
 }
 
 @media (max-width: 640px) {
@@ -428,13 +337,4 @@ a:hover {
     grid-template-columns: 1fr;
   }
 
-  .hero__image,
-  .hero__media {
-    max-height: 360px;
-    height: 360px;
-  }
-
-  .hero__image {
-    object-position: 50% 20%;
-  }
 }

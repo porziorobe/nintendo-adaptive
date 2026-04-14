@@ -35,7 +35,7 @@ The app binds to `process.env.PORT` in `server.js`, which Heroku provides automa
 ## Project layout
 
 - `public/index.html` — Markup for header, hero, and product row.
-- `public/css/styles.css` — Layout and Nintendo-style colors (`#e60012`, yellow promo band, card grid).
+- `public/css/styles.css` — Layout and Nintendo-style colors (`#e60012`, card grid).
 - `public/images/` — Hero and tile assets (replace files to match your exports; update `src` in `index.html` if you change extensions).
 - `server.js` — Express static file server.
 - `Procfile` — Heroku web process.
@@ -44,7 +44,7 @@ The app binds to `process.env.PORT` in `server.js`, which Heroku provides automa
 
 | File | Role |
 |------|------|
-| `hero-reference.png` | Hero background. Default is a full-page reference capture; swap for a dedicated hero crop and adjust `.hero__image` `object-position` in CSS if needed. |
+| `hero-keyart.png` | Wide hero banner (2880×900). Replace to swap the main hero image; keep width/height attributes in `index.html` in sync. |
 | `tile-mario-kart-world.svg` | Card 1 art (placeholder gradient until you replace). |
 | `tile-donkey-kong.svg` | Card 2 |
 | `tile-splatoon.svg` | Card 3 |
