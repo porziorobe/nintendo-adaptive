@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nintendo Official Site (demo)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+      <div class="site-header__inner">
+        <a class="site-logo" href="#" aria-label="Home (demo)">
+          <span class="site-logo__mark" aria-hidden="true"></span>
+          <span class="site-logo__text">Nintendo</span>
+        </a>
+
+        <nav class="primary-nav" aria-label="Primary">
+          <ul class="primary-nav__list">
+            <li><a href="#">Games</a></li>
+            <li><a href="#">Hardware</a></li>
+            <li><a href="#">News &amp; Events</a></li>
+            <li><a href="#">Characters</a></li>
+            <li><a href="#">Switch&nbsp;2</a></li>
+            <li><a href="#">Play Nintendo</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-tools">
+          <a class="header-tools__link" href="#" aria-label="Search (demo)">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+              />
+            </svg>
+          </a>
+          <a class="header-tools__link" href="#" aria-label="Wish list (demo)">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"
+              />
+            </svg>
+          </a>
+          <a class="header-tools__link" href="#" aria-label="Cart (demo)">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero__media">
+          <img
+            class="hero__image"
+            src="images/hero-reference.png"
+            alt=""
+            width="1920"
+            height="1080"
+            decoding="async"
+            fetchpriority="high"
+          />
+          <div class="hero__overlay">
+            <div class="hero__yellow">
+              <p class="hero__eyebrow">Digital games on sale now</p>
+              <h1 id="hero-heading" class="hero__title">Tremendous Value</h1>
+              <p class="hero__sub">
+                Save on digital games like <em>Mario Kart World</em>, <em>Donkey Kong Bananza</em>, and more.
+              </p>
+              <a class="btn btn--primary" href="#">Shop now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-row" aria-label="Featured games">
+        <div class="product-row__inner">
+          <article class="product-card">
+            <a class="product-card__media" href="#">
+              <img
+                src="images/tile-mario-kart-world.svg"
+                alt=""
+                width="400"
+                height="225"
+                loading="lazy"
+              />
+            </a>
+            <div class="product-card__body">
+              <h2 class="product-card__title"><a href="#">Mario Kart World</a></h2>
+              <p class="product-card__copy">
+                Race across a sprawling connected world with newly imagined courses and returning favorites.
+              </p>
+              <div class="product-card__meta">
+                <span class="product-card__price">$79.99</span>
+                <span class="product-card__badge">Eligible for My Nintendo Points</span>
+              </div>
+              <a class="btn btn--outline" href="#">Available now</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <a class="product-card__media" href="#">
+              <img
+                src="images/tile-donkey-kong.svg"
+                alt=""
+                width="400"
+                height="225"
+                loading="lazy"
+              />
+            </a>
+            <div class="product-card__body">
+              <h2 class="product-card__title"><a href="#">Donkey Kong Bananza</a></h2>
+              <p class="product-card__copy">
+                Go bananas in a 3D open-world adventure—smash, explore, and platform your way through a collapsing world.
+              </p>
+              <div class="product-card__meta">
+                <span class="product-card__price">$69.99</span>
+                <span class="product-card__badge">Eligible for My Nintendo Points</span>
+              </div>
+              <a class="btn btn--outline" href="#">Available now</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <a class="product-card__media" href="#">
+              <img
+                src="images/tile-splatoon.svg"
+                alt=""
+                width="400"
+                height="225"
+                loading="lazy"
+              />
+            </a>
+            <div class="product-card__body">
+              <h2 class="product-card__title"><a href="#">Splatoon Raiders</a></h2>
+              <p class="product-card__copy">
+                Dive into ink-soaked co-op raids with friends—new gear, new modes, same splat-tastic style.
+              </p>
+              <div class="product-card__meta">
+                <span class="product-card__price">$59.99</span>
+                <span class="product-card__badge">Eligible for My Nintendo Points</span>
+              </div>
+              <a class="btn btn--outline" href="#">Pre-order now</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <a class="product-card__media" href="#">
+              <img
+                src="images/tile-mario-galaxy.svg"
+                alt=""
+                width="400"
+                height="225"
+                loading="lazy"
+              />
+            </a>
+            <div class="product-card__body">
+              <h2 class="product-card__title"><a href="#">Super Mario Galaxy+</a></h2>
+              <p class="product-card__copy">
+                Return to the cosmos with refined gravity platforming and a galaxy of surprises.
+              </p>
+              <div class="product-card__meta">
+                <span class="product-card__price">$59.99</span>
+                <span class="product-card__badge">Eligible for My Nintendo Points</span>
+              </div>
+              <a class="btn btn--outline" href="#">Available now</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <a class="product-card__media" href="#">
+              <img
+                src="images/tile-zelda.svg"
+                alt=""
+                width="400"
+                height="225"
+                loading="lazy"
+              />
+            </a>
+            <div class="product-card__body">
+              <h2 class="product-card__title"><a href="#">The Legend of Zelda: Echoes of Tomorrow</a></h2>
+              <p class="product-card__copy">
+                A new chapter in Hyrule—puzzles, dungeons, and an artful world to lose yourself in.
+              </p>
+              <div class="product-card__meta">
+                <span class="product-card__price">$69.99</span>
+                <span class="product-card__badge">Eligible for My Nintendo Points</span>
+              </div>
+              <a class="btn btn--outline" href="#">Learn more</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

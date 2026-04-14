@@ -1,0 +1,15 @@
+{
+  "name": "nintendo-home-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static above-the-fold visual demo styled like nintendo.com",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
