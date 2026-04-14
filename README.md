@@ -44,6 +44,7 @@ The app binds to `process.env.PORT` in `server.js`, which Heroku provides automa
 
 | File | Role |
 |------|------|
+| `nav-reference.png` | Full navigation bar raster (matches current nintendo.com layout). Replace the file to refresh the header; update `width`/`height` on the `<img>` if dimensions change. |
 | `hero-keyart.png` | Wide hero banner (2880×900). Replace to swap the main hero image; keep width/height attributes in `index.html` in sync. |
 | `tile-mario-kart-world.svg` | Card 1 art (placeholder gradient until you replace). |
 | `tile-donkey-kong.svg` | Card 2 |
