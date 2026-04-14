@@ -204,6 +204,35 @@ a:hover {
   vertical-align: top;
 }
 
+/* —— Hero caption + divider (matches nintendo.com layout below key art) —— */
+.hero-follow {
+  background: #fff;
+  padding: 1.1rem 1rem 1.15rem;
+}
+
+.hero-follow__inner {
+  max-width: var(--max-content);
+  margin: 0 auto;
+}
+
+.hero-follow__text {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.page-divider {
+  height: 2px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: #dadada;
+}
+
 /* —— Buttons —— */
 .btn {
   display: inline-flex;
@@ -239,7 +268,18 @@ a:hover {
 /* —— Product row —— */
 .product-row {
   background: #f2f2f2;
-  padding: 1.5rem 1rem 2.5rem;
+  padding: 1.25rem 1rem 2.5rem;
+}
+
+.product-row__heading {
+  max-width: var(--max-content);
+  margin: 0 auto 1rem;
+  padding: 0 1rem;
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--ink);
 }
 
 .product-row__inner {
