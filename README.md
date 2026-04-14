@@ -36,7 +36,8 @@ The app binds to `process.env.PORT` in `server.js`, which Heroku provides automa
 
 - `public/index.html` — Markup for header, hero, and product row.
 - `public/css/styles.css` — Layout and Nintendo-style colors (`#e60012`, card grid).
-- `public/images/` — Logo, hero, and tile assets (replace files as needed; update `src` and optional dimensions in HTML/CSS).
+- `public/images/` — Logo and hero art hosted locally.
+- `data/names-to-images.csv` — Maps featured game titles to box art URLs (kept in sync with `public/index.html` card images).
 - `server.js` — Express static file server.
 - `Procfile` — Heroku web process.
 
@@ -46,13 +47,8 @@ The app binds to `process.env.PORT` in `server.js`, which Heroku provides automa
 |------|------|
 | `nintendo-logo.png` | Official-style logo in the **red brand lockup** (flush left). Swap the file to change artwork; tune `.site-header__logo` `height` / `max-width` in CSS if needed. |
 | `hero-keyart.png` | Wide hero banner (2880×900). Replace to swap the main hero image; keep `width`/`height` on the `<img>` in sync. |
-| `tile-mario-kart-world.svg` | Card 1 art (placeholder gradient until you replace). |
-| `tile-donkey-kong.svg` | Card 2 |
-| `tile-splatoon.svg` | Card 3 |
-| `tile-mario-galaxy.svg` | Card 4 |
-| `tile-zelda.svg` | Card 5 |
 
-Use roughly **16:9** artwork for tiles.
+Featured game tiles load **box art from Nintendo’s CDN** (URLs from your CSV). To change art, update `data/names-to-images.csv` and the matching `src` on each card in `public/index.html`, or download images into `public/images/` and point `src` there if you need fully offline hosting.
 
 ## Notes
 
