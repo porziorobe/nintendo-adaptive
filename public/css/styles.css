@@ -8,6 +8,8 @@
   --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.08);
   --radius-card: 4px;
   --max-content: 1440px;
+  /* Match intrinsic width of nav-reference.png so it is not upscaled (blurry) on wide screens */
+  --nav-raster-width: 1024px;
   --font: "Open Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
@@ -66,7 +68,8 @@ a:hover {
 
 .site-header__img {
   display: block;
-  width: 100%;
+  width: min(100%, var(--nav-raster-width));
+  margin-inline: auto;
   height: auto;
   vertical-align: top;
 }

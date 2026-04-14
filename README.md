@@ -44,7 +44,9 @@ The app binds to `process.env.PORT` in `server.js`, which Heroku provides automa
 
 | File | Role |
 |------|------|
-| `nav-reference.png` | Full navigation bar raster (matches current nintendo.com layout). Replace the file to refresh the header; update `width`/`height` on the `<img>` if dimensions change. |
+| `nav-reference.png` | Full navigation bar raster (matches current nintendo.com layout). Replace the file to refresh the header; update `width`/`height` on the `<img>` and `--nav-raster-width` in `styles.css` if the pixel width changes. |
+
+**Nav sharpness:** The bundled PNG is **1024px wide**. Stretching it full-bleed on a large monitor upscales it and looks soft. CSS caps display width at `--nav-raster-width` (1:1 pixels on wide viewports). For a **retina-sharp** bar, supply a **2×** asset (e.g. 2048px wide with the same aspect ratio), set `--nav-raster-width: 2048px`, and update the `<img>` dimensions accordingly—or use a vector/SVG export if you have one.
 | `hero-keyart.png` | Wide hero banner (2880×900). Replace to swap the main hero image; keep width/height attributes in `index.html` in sync. |
 | `tile-mario-kart-world.svg` | Card 1 art (placeholder gradient until you replace). |
 | `tile-donkey-kong.svg` | Card 2 |
