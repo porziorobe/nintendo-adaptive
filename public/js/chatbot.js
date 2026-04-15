@@ -197,8 +197,7 @@
 
     var banner = el("div", "cb-promo-banner");
     banner.innerHTML =
-      '<p class="cb-promo-banner__heading">Shop the Indie Store</p>' +
-      '<p class="cb-promo-banner__sub">Hand-picked gems from independent developers</p>';
+      '<img class="cb-promo-banner__img" src="images/indie-world-banner.png" alt="Indie World">';
     content.appendChild(banner);
 
     var cards = el("div", "cb-content__cards");
