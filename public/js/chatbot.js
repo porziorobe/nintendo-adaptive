@@ -93,7 +93,12 @@
     var hdr = el("div", "cb-header");
     hdr.innerHTML =
       '<img class="cb-header__avatar" src="' + AVATAR + '" alt="">' +
-      '<span class="cb-header__name">R.O.B.</span>' +
+      '<div class="cb-header__info">' +
+        '<span class="cb-header__name">R.O.B.</span>' +
+        '<span class="cb-header__powered">Powered by Agentforce ' +
+          '<img class="cb-header__sf-logo" src="images/salesforce-logo.png" alt="Salesforce">' +
+        '</span>' +
+      '</div>' +
       '<button class="cb-header__close" aria-label="Close chat">&times;</button>';
     hdr.querySelector(".cb-header__close").addEventListener("click", closeChat);
     p.appendChild(hdr);

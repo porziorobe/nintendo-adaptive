@@ -538,11 +538,36 @@ a:hover {
   background: #fff;
 }
 
-.cb-header__name {
+.cb-header__info {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.cb-header__name {
   font-family: var(--font);
   font-size: 0.9375rem;
   font-weight: 700;
+  line-height: 1.2;
+}
+
+.cb-header__powered {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font);
+  font-size: 0.625rem;
+  font-weight: 500;
+  opacity: 0.9;
+  line-height: 1;
+}
+
+.cb-header__sf-logo {
+  height: 14px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .cb-header__close {
