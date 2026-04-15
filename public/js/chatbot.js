@@ -33,16 +33,24 @@
   buildBubble();
 
   function buildBubble() {
+    var wrap = el("div", "cb-bubble-wrap");
+
+    var tip = el("div", "cb-bubble-tip");
+    tip.textContent = "R.O.B., here! Is there anything I can assist with?";
+    wrap.appendChild(tip);
+
     var b = el("div", "cb-bubble");
     b.innerHTML = '<img src="' + AVATAR + '" alt="Chat with R.O.B.">';
     b.addEventListener("click", openChat);
-    root.appendChild(b);
+    wrap.appendChild(b);
+
+    root.appendChild(wrap);
   }
 
   function openChat() {
     if (isOpen) return;
     isOpen = true;
-    root.querySelector(".cb-bubble").style.display = "none";
+    root.querySelector(".cb-bubble-wrap").style.display = "none";
     panel = buildPanel();
     root.appendChild(panel);
     requestAnimationFrame(function () {
@@ -58,7 +66,7 @@
     removeBackdrop();
     setTimeout(function () {
       if (panel.parentNode) panel.parentNode.removeChild(panel);
-      root.querySelector(".cb-bubble").style.display = "";
+      root.querySelector(".cb-bubble-wrap").style.display = "";
     }, 350);
   }
 
