@@ -28,7 +28,7 @@
 
   var isOpen = false;
   var isExpanded = false;
-  var panel, body, inputField;
+  var panel, body, inputField, backdrop;
 
   buildBubble();
 
@@ -55,10 +55,28 @@
     isOpen = false;
     isExpanded = false;
     panel.classList.remove("is-open", "is-expanded");
+    removeBackdrop();
     setTimeout(function () {
       if (panel.parentNode) panel.parentNode.removeChild(panel);
       root.querySelector(".cb-bubble").style.display = "";
     }, 350);
+  }
+
+  function showBackdrop() {
+    backdrop = el("div", "cb-backdrop");
+    backdrop.addEventListener("click", closeChat);
+    root.appendChild(backdrop);
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { backdrop.classList.add("is-visible"); });
+    });
+  }
+
+  function removeBackdrop() {
+    if (!backdrop) return;
+    backdrop.classList.remove("is-visible");
+    var ref = backdrop;
+    setTimeout(function () { if (ref.parentNode) ref.parentNode.removeChild(ref); }, 400);
+    backdrop = null;
   }
 
   function buildPanel() {
@@ -169,23 +187,21 @@
 
   function expandWithRecommendations() {
     isExpanded = true;
+    showBackdrop();
     panel.classList.add("is-expanded");
 
     body.className = "cb-body cb-body--expanded";
     body.innerHTML = "";
 
-    var promo = el("div", "cb-promo");
-    promo.innerHTML =
-      '<p class="cb-promo__heading">Shop the<br>Indie Store</p>' +
-      '<p class="cb-promo__sub">Hand-picked gems from independent developers</p>';
-    body.appendChild(promo);
+    var content = el("div", "cb-content");
 
-    var rail = el("div", "cb-rail");
+    var banner = el("div", "cb-promo-banner");
+    banner.innerHTML =
+      '<p class="cb-promo-banner__heading">Shop the Indie Store</p>' +
+      '<p class="cb-promo-banner__sub">Hand-picked gems from independent developers</p>';
+    content.appendChild(banner);
 
-    var msgs = el("div", "cb-rail__messages");
-    rail.appendChild(msgs);
-
-    var cards = el("div", "cb-rail__cards");
+    var cards = el("div", "cb-content__cards");
     INDIE_GAMES.forEach(function (g) {
       var c = el("div", "cb-card");
       c.innerHTML =
@@ -193,13 +209,24 @@
         '<div class="cb-card__body"><p class="cb-card__title">' + esc(g.name) + "</p></div>";
       cards.appendChild(c);
     });
-    rail.appendChild(cards);
+    content.appendChild(cards);
+    body.appendChild(content);
 
-    body.appendChild(rail);
+    var chatRail = el("div", "cb-chat-rail");
+    var msgs = el("div", "cb-chat-rail__messages");
+    chatRail.appendChild(msgs);
+
+    var railInput = buildInputBar();
+    chatRail.appendChild(railInput);
+
+    body.appendChild(chatRail);
+
+    var panelInput = panel.querySelector(".cb-input");
+    if (panelInput) panelInput.style.display = "none";
 
     typeMessage(msgs, RECO_MSG, function () {
       var opts = el("div", "cb-options");
-      opts.style.padding = "0 0.75rem 0.75rem";
+      opts.style.padding = "0.25rem 0.75rem 0.5rem";
       ["Add To Cart", "Show Me More"].forEach(function (label) {
         var btn = el("button", "cb-options__btn");
         btn.textContent = label;
@@ -213,7 +240,8 @@
         });
         opts.appendChild(btn);
       });
-      rail.appendChild(opts);
+      msgs.appendChild(opts);
+      scrollChat();
     });
   }
 
@@ -232,7 +260,7 @@
   }
 
   function getChatContainer() {
-    if (isExpanded) return body.querySelector(".cb-rail__messages") || body;
+    if (isExpanded) return body.querySelector(".cb-chat-rail__messages") || body;
     return body;
   }
 
